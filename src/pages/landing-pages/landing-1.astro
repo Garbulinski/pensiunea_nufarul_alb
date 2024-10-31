@@ -1,0 +1,110 @@
+---
+import { Icon } from 'astro-icon/components';
+import {
+	AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+	StickyTextImageSection,
+	CtaCardSection,
+} from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import TextAndImageHero from '../../components/sections/heros/TextAndImageHero.astro';
+
+const seo = {
+	title: 'Nufarul Alb | Descriere',
+	description: 'Nufarul alb | Descriere',
+};
+---
+
+<Layout {seo}>
+	<TextAndImageHero reversed>
+		<div slot="text-container">
+			<h1>Descrierea Pensiunii</h1>
+			<p>Pe aceasta pagina veti gasi detalii despre casa noastra de vacanta</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/landing-hero-1.jpg"
+				alt="Astro Odyssee"
+				id="home-hero-image"
+			/>
+		</picture>
+	</TextAndImageHero>
+
+	<CustomerQuoteSection
+		quoteText="Fie că este vorba de explorarea minunilor naturale ale Deltei sau de relaxare în spațiile noastre primitoare, oaspeții pot avea încredere în expertiza Nufarul Alb pentru a asigura un sejur memorabil, cum am avut si eu"
+		customerName="Un turist fericit"
+	/>
+
+	<ThreeColumnTextSection>
+		<div slot="column-1-body">
+			<h2>De ce sa va cazati la noi?</h2>
+			<p>
+				Pentru o aventură de neuitat în inima Deltei Dunarii, nu există o alegere mai bună decât Casa de Vacanta Nufarul Alb. 
+				În calitate de experți în ospitalitate, nu oferim doar cazare, ci organizăm experiențe care lasă o impresie de durată.
+			</p>
+		</div>
+		<div slot="column-2-body">
+			<h2>Cum va puteti caza la noi?</h2>
+			<p>								
+				Fie că plănuiți o evadare spontană sau o vacanta normala echipa noastră este aici pentru a vă ajuta la fiecare pas. 
+				Ridicați telefonul și formați numărul <b>0755 037 662</b> noastre pentru a vă rezerva camera și pentru a începe o călătorie de neuitat cu noi.
+			</p>
+		</div>
+		<div slot="column-3-body">
+			<h2>Cand va puteti caza la noi?</h2>
+			<p>
+				Începând cu 1 mai, oaspeții sunt invitați să își rezerve șederea la noi, asigurându-se că își asigură locul în oaza noastră de liniște, în mijlocul minunilor naturale ale deltei.
+			</p>
+		</div>
+	</ThreeColumnTextSection>
+
+	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded
+	/>
+
+	<StickyTextImageSection>
+		<div slot="text-container">
+			<h2>Lucruri importante</h2>
+			<h3>Locatia</h3>
+			<p>
+				Casa de Vacanta este situata pe Strada Dunăreni, Nr. 75, locația noastră pitorească oferă amestecul perfect de frumusețe naturală și liniște senină.
+				Lăsați-ne să vă ducem într-o călătorie prin această destinație idilică.
+			</p>
+			<h3>Camere</h3>
+			<p>
+				Vă oferim o gamă de camere confortabile și primitoare pentru a se potrivi preferințelor fiecărui călător. Indiferent dacă călătorești singur, cu un partener sau în grup, avem cazarea perfectă pentru tine.
+				 Lăsați-ne să vă facem un tur al posibilităților noastre de închiriere, camere de 2 paturi sau camere matrimoniale.
+			</p>
+			<h3>Catering </h3>
+			<p>
+				Oaspeții sunt invitați să se răsfețe într-o aventură culinară care prezintă diversele arome ale regiunii noastre și sa incerce deliciile sale culinare care celebrează esența regiunii noastre. 
+				Astfel va punem la dispozitie bucatari locali pentru a va delecta cu specialitatile locului.
+			</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/landing-sticky.jpg"
+				alt="Astro Odyssey"
+				loading="lazy"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+	<CtaCardSection
+		background="var(--theme-surface-2)"
+		color="var(--theme-on-surface-2)"
+	>
+		<h2>Start Your Website Today</h2>
+		<p>
+			It only takes a couple clicks to have a new, modern website for your
+			business or startup.
+		</p>
+		<Button href="/theme/get-started" customIcon
+			>Get Started <Fragment slot="icon">
+				<Icon name="ic:baseline-chevron-right" />
+			</Fragment></Button
+		>
+	</CtaCardSection>
+</Layout>

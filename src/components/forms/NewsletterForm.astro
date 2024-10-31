@@ -1,0 +1,19 @@
+---
+import {Icon} from 'astro-icon/components'
+import {Button, FormInput } from "@components/odyssey-theme";
+
+---
+
+
+<style>
+.newsletter-form__container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+}
+@media (max-width: 600px) {
+  .newsletter-form__container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

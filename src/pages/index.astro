@@ -1,0 +1,96 @@
+---
+import { Container, FeatureCard } from '@components/odyssey-theme';
+
+import Layout from '../layouts/Page.astro';
+import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+---
+
+<Layout>
+	<HomeHeroSection />
+	<Container>
+		<section class="feature-card__section">
+			<h2>Paginile Website-ului</h2>
+			<p>
+				Citeste mai multe despre locatia noastra ca sa te convingi singur.
+			</p>
+			<div class="feature-card__grid1">
+				<FeatureCard href="/landing-pages/landing-1" title="Descrierea Locatiei" imgSrc="/assets/images/home/screenshots/landing-1">
+				</FeatureCard>
+				<!-- <FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
+				</FeatureCard> -->
+			</div>
+		</section>
+	</Container>
+
+	<Container>
+		<section class="feature-card__section">
+			<h2>Facilitatile Pensiunii</h2>
+			<p>
+				Vizioneaza facilitatile pensiunii noastre. 
+			</p>
+			<div class="feature-card__grid">
+				<FeatureCard href="/company/about" title="Gradina" imgSrc="/assets/images/home/screenshots/about">
+				</FeatureCard>
+				<FeatureCard href="/company/camere" title="Camere Confortabile" imgSrc="/assets/images/home/screenshots/contact">
+				</FeatureCard>
+				<FeatureCard href="/company/terasa" title="Foisor" imgSrc="/assets/images/home/screenshots/blog">
+				</FeatureCard>
+				<!-- <FeatureCard
+					href="/blog/posts/remote-work-mental-health"
+					title="Blog Post"
+          imgSrc="/assets/images/home/screenshots/blog-post"
+				>
+				</FeatureCard> -->
+				<FeatureCard
+					href="/company/bucatarie_locala"
+					imgSrc="/assets/images/home/screenshots/legal"
+					title="Bucatarie Locala"
+				>
+				</FeatureCard>
+			</div>
+		</section>
+	</Container>
+
+	<!-- <Container>
+		<section class="feature-card__section">
+			<h2>Theme Pages</h2>
+			<p>Learn more about how to set up and use the Odyssey Theme.</p>
+			<div class="feature-card__grid">
+				<FeatureCard
+					href="/theme/get-started"
+					imgSrc="/assets/images/home/screenshots/get-started"
+					title="Get Started"
+				>
+				</FeatureCard>
+				<FeatureCard
+					href="/theme/style-guide"
+					imgSrc="/assets/images/home/screenshots/style-guide"
+					title="Style Guide"
+				>
+				</FeatureCard>
+			</div>
+		</section>
+	</Container> -->
+</Layout>
+
+<style>
+	.feature-card__section {
+		margin: var(--section-margin) auto;
+		text-align: center;
+	}
+	.feature-card__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--theme-grid-gap);
+	}
+	.feature-card__grid1 {
+		display: grid;
+		/* grid-template-columns: repeat(2, 1fr); */
+		gap: var(--theme-grid-gap);
+	}
+	@media (max-width: 768px) {
+		.feature-card__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

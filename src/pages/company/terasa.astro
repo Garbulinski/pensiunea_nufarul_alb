@@ -1,0 +1,75 @@
+---
+import { TextSection } from '../../components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+
+const seo = {
+	title: 'Foisor ',
+	description: 'Pagina Foisor',
+};
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>Foisor Nufarul Alb</h1>
+			<p>
+				Vino in foisorul nostru primitor care oferă cadrul perfect pentru o experiență culinară locala,
+        unde oaspeții se pot răsfăța cu bucătăria delicioasă în timp ce se bucură de energia vibrantă a împrejurimilor.
+			</p>
+		</div>
+    <picture slot="image-container">
+      <div id="image-slider">
+
+      <img
+        src="/assets/images/home/terasa.jpg"
+        alt="Astro Odyssee"
+        id="home-hero-image"
+      />
+      <img src="/assets/images/home/gradina2.jpg" alt="Image 1">
+      <img src="/assets/images/home/gradina3.jpg" alt="Image 2">
+      <img src="/assets/images/home/gradina4.jpg" alt="Image 3">
+      <img src="/assets/images/home/gradina5.jpg" alt="Image 5">
+      <img src="/assets/images/home/gradina6.jpg" alt="Image 6">
+      <img src="/assets/images/home/gradina7.jpg" alt="Image 6">
+    </div>
+    </picture>
+	</HeroSection>
+  <TextSection narrow>
+    <p>
+      Fie că îți poftești o masă relaxată cu prietenii sau pur și simplu o băutură răcoritoare pentru a te relaxa după o zi lungă, terasa noastră este locul. Cu aranjamente confortabile pentru scaune, lumina caldă și o atmosferă primitoare,
+      este locul ideal pentru a se aduna, a discuta și a creati amintiri de durată alături de cei dragi. Veniți, scăpați de agitația orașului in acest refugiu pentru creea momente încântătoare și conversații prețuite.
+    </p>
+  </TextSection>
+</Layout>
+
+<script>
+  // Get all images
+  const images = document.querySelectorAll<HTMLImageElement>('#image-slider img');
+
+  let currentIndex = 0;
+
+  images[currentIndex].style.display = 'block';
+  for (let i = 1; i < images.length; i++) {
+    images[i].style.display = 'none';
+  }
+  // Function to show next image
+  function showNextImage() {
+    
+    // images[currentIndex].style.transform = 'translateX(-100%)'; // Slide left
+
+    images[currentIndex].style.display = 'none';
+
+    // Increment index or reset to 0 if reached the end
+    currentIndex = (currentIndex + 1) % images.length;
+
+    // Show next image
+    images[currentIndex].style.display = 'block';
+  }
+
+  // Initial call to show first image
+  showNextImage();
+
+  // Set interval to change image every 10 seconds
+  setInterval(showNextImage, 10000);
+</script>

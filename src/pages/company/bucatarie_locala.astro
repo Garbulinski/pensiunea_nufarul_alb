@@ -1,0 +1,76 @@
+---
+import { TextSection } from '../../components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+
+const seo = {
+	title: 'Bucatarie ',
+	description: 'Bucatarie',
+};
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>Specialitati Nufarul Alb</h1>
+			<p>
+				Pășește într-o aventură culinară ca nimeni altul și ispitește-ți papilele gustative cu aromele bucătăriei noastre locale din pește.
+				Veniți, răsfățați-vă cu aromele și experimentați adevărata esență a bucătăriei noastre locale în cea mai bună calitate.
+			</p>
+		</div>
+    <picture slot="image-container">
+		<div id="image-slider">
+		<img
+		  src="/assets/images/home/ciorbadepeste.jpg"
+		  alt="Astro Odyssee"
+		  id="home-hero-image"
+		/>
+		<img src="/assets/images/home/peste2.jpg" alt="Image 1">
+		<img src="/assets/images/home/peste3.jpg" alt="Image 2">
+		<img src="/assets/images/home/peste4.jpg" alt="Image 3">
+	</div>
+    </picture>
+	</HeroSection>
+  <TextSection narrow>
+    <p>
+		La restaurantele din apropiere, ne mândrim să servim cele mai proaspete capturi din apele din apropiere,
+		 pregătite la perfecțiune de către bucătarii noștri pricepuți. 
+		 De la pește proaspat la grătar până la ciorbe de pește
+		fiecare fel de mâncare este o sărbătoare a bogatei moșteniri culinare a regiunii noastre. 
+		Indiferent dacă sunteți un pasionat de fructe de mare sau nou în deliciul preparatelor din pește,
+		 meniul nostru promite o sărbătoare pentru simțuri care vă va lăsa să aveți mai multă poftă.
+    </p>
+  </TextSection>
+</Layout>
+      
+
+<script>
+	// Get all images
+	const images = document.querySelectorAll<HTMLImageElement>('#image-slider img');
+  
+	let currentIndex = 0;
+  
+	images[currentIndex].style.display = 'block';
+	for (let i = 1; i < images.length; i++) {
+	  images[i].style.display = 'none';
+	}
+	// Function to show next image
+	function showNextImage() {
+	  
+	  // images[currentIndex].style.transform = 'translateX(-100%)'; // Slide left
+  
+	  images[currentIndex].style.display = 'none';
+  
+	  // Increment index or reset to 0 if reached the end
+	  currentIndex = (currentIndex + 1) % images.length;
+  
+	  // Show next image
+	  images[currentIndex].style.display = 'block';
+	}
+  
+	// Initial call to show first image
+	showNextImage();
+  
+	// Set interval to change image every 10 seconds
+	setInterval(showNextImage, 10000);
+  </script>
