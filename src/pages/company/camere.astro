@@ -14,63 +14,66 @@ const seo = {
 		<div slot="text-container">
 			<h1>Camerele Nufarul Alb</h1>
 			<p>
-				Amplasate într-un mediu liniștit, camerele noastre oferă un sanctuar liniștit pentru călătorii obosiți care caută răgaz de agitația vieții de zi cu zi.
-				La refugiul nostru, ne mândrim cu faptul că oferim o atmosferă caldă și primitoare, unde oaspeții se pot relaxa, reîncărca și crea amintiri de durată.
-		
+				Amplasate într-un mediu liniștit, camerele noastre oferă un sanctuar
+				liniștit pentru călătorii obosiți care caută răgaz de agitația vieții de
+				zi cu zi. La refugiul nostru, ne mândrim cu faptul că oferim o atmosferă
+				caldă și primitoare, unde oaspeții se pot relaxa, reîncărca și crea
+				amintiri de durată.
 			</p>
 		</div>
-    <picture slot="image-container">
-	 <div id="image-slider">	
-      <img
-        src="/assets/images/home/camera.jpg"
-        alt="Astro Odyssee"
-        id="home-hero-image"
-      />
-	  <img src="/assets/images/home/camera2.jpg" alt="Image 1">
-	  <img src="/assets/images/home/camera1.jpg" alt="Image 1">
-	  <img src="/assets/images/home/camera3.jpg" alt="Image 2">
-	  <img src="/assets/images/home/camera4.jpg" alt="Image 1">
-	</div>
-    </picture>
+		<span slot="images-list">
+			<img
+				src="/assets/images/home/camera.jpg"
+				alt="Astro Odyssee"
+				id="home-hero-image"
+			/>
+			<img src="/assets/images/home/camera2.jpg" alt="Image 1" />
+			<img src="/assets/images/home/camera1.jpg" alt="Image 1" />
+			<img src="/assets/images/home/camera3.jpg" alt="Image 2" />
+			<img src="/assets/images/home/camera4.jpg" alt="Image 1" />
+		</span>
 	</HeroSection>
-  <TextSection narrow>
-    <p>
-		Bucurați-vă de facilități moderne, cum ar fi TV, Wi-Fi gratuit,aer conditionat in toate camerele și băi bine dotate. Daca v-ati plictisit camerele au acces la gradina fermecătoare pentru a va putea bucura de vederea pitorească si peisajul înconjurător,
-		 invitându-vă să vă relaxați și să vă bucurați de frumusețea împrejurimilor.
-		Vino să experimentezi confortul și farmecul camerelor noastre confortabile și să descoperi de ce atât de mulți călători aleg să ne facă casa lor departe de casă.
-    </p>
-  </TextSection>
+	<TextSection narrow>
+		<p>
+			Bucurați-vă de facilități moderne, cum ar fi TV, Wi-Fi gratuit,aer
+			conditionat in toate camerele și băi bine dotate. Daca v-ati plictisit
+			camerele au acces la gradina fermecătoare pentru a va putea bucura de
+			vederea pitorească si peisajul înconjurător, invitându-vă să vă relaxați
+			și să vă bucurați de frumusețea împrejurimilor. Vino să experimentezi
+			confortul și farmecul camerelor noastre confortabile și să descoperi de ce
+			atât de mulți călători aleg să ne facă casa lor departe de casă.
+		</p>
+	</TextSection>
 </Layout>
-
 
 <script>
 	// Get all images
-	const images = document.querySelectorAll<HTMLImageElement>('#image-slider img');
-  
+	const images =
+		document.querySelectorAll<HTMLImageElement>('.image-slider img');
+
 	let currentIndex = 0;
-  
+
 	images[currentIndex].style.display = 'block';
 	for (let i = 1; i < images.length; i++) {
-	  images[i].style.display = 'none';
+		images[i].style.display = 'none';
 	}
 	// Function to show next image
 	function showNextImage() {
-	  
-	   images[currentIndex].style.transform = 'translateX(-100%)'; // Slide left
-  
-	  images[currentIndex].style.display = 'none';
-  
-	  // Increment index or reset to 0 if reached the end
-	  currentIndex = (currentIndex + 1) % images.length;
-		
-	  // Show next image
+		images[currentIndex].style.transform = 'translateX(-100%)'; // Slide left
+
+		images[currentIndex].style.display = 'none';
+
+		// Increment index or reset to 0 if reached the end
+		currentIndex = (currentIndex + 1) % images.length;
+
+		// Show next image
 		images[currentIndex].style.display = 'block';
 		images[currentIndex].style.transform = 'translateX(0)'; // Slide into view
 	}
-  
+
 	// Initial call to show first image
 	showNextImage();
-  
+
 	// Set interval to change image every 10 seconds
 	setInterval(showNextImage, 10000);
-  </script>
+</script>
